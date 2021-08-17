@@ -1,5 +1,5 @@
 package com.leonardonatali.marsrobots.position.enums;
 
-public enum Move {
-    LEFT, RIGHT
+public enum PositionEnum {
+    NORTH, SOUTH, EAST, WEST,
 }

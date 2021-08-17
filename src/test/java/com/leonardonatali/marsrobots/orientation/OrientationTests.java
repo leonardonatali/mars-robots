@@ -3,8 +3,8 @@ package com.leonardonatali.marsrobots.orientation;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.leonardonatali.marsrobots.position.Orientation;
-import com.leonardonatali.marsrobots.position.enums.Move;
-import com.leonardonatali.marsrobots.position.enums.Position;
+import com.leonardonatali.marsrobots.position.enums.MoveEnum;
+import com.leonardonatali.marsrobots.position.enums.PositionEnum;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,73 +15,73 @@ class OrientationTests {
     // Clockwise tests
     @Test
     void shouldBeMoveToEastFromNorth() {
-        assertTrue(Orientation.nextPosition(Position.NORTH, Move.RIGHT) == Position.EAST);
+        assertTrue(Orientation.nextPosition(PositionEnum.NORTH, MoveEnum.RIGHT) == PositionEnum.EAST);
     }
 
     @Test
     void shouldBeMoveToSouthFromNorth() {
-        Position pos = Position.NORTH;
-        pos = Orientation.nextPosition(pos, Move.RIGHT);
-        pos = Orientation.nextPosition(pos, Move.RIGHT);
+        PositionEnum pos = PositionEnum.NORTH;
+        pos = Orientation.nextPosition(pos, MoveEnum.RIGHT);
+        pos = Orientation.nextPosition(pos, MoveEnum.RIGHT);
 
-        assertTrue(pos == Position.SOUTH);
+        assertTrue(pos == PositionEnum.SOUTH);
     }
 
     @Test
     void shouldBeMoveToWestFromNorth() {
-        Position pos = Position.NORTH;
-        pos = Orientation.nextPosition(pos, Move.RIGHT);
-        pos = Orientation.nextPosition(pos, Move.RIGHT);
-        pos = Orientation.nextPosition(pos, Move.RIGHT);
+        PositionEnum pos = PositionEnum.NORTH;
+        pos = Orientation.nextPosition(pos, MoveEnum.RIGHT);
+        pos = Orientation.nextPosition(pos, MoveEnum.RIGHT);
+        pos = Orientation.nextPosition(pos, MoveEnum.RIGHT);
 
-        assertTrue(pos == Position.WEST);
+        assertTrue(pos == PositionEnum.WEST);
     }
 
     @Test
     void shouldBeMoveToNorthFromNorth() {
-        Position pos = Position.NORTH;
-        pos = Orientation.nextPosition(pos, Move.RIGHT);
-        pos = Orientation.nextPosition(pos, Move.RIGHT);
-        pos = Orientation.nextPosition(pos, Move.RIGHT);
-        pos = Orientation.nextPosition(pos, Move.RIGHT);
+        PositionEnum pos = PositionEnum.NORTH;
+        pos = Orientation.nextPosition(pos, MoveEnum.RIGHT);
+        pos = Orientation.nextPosition(pos, MoveEnum.RIGHT);
+        pos = Orientation.nextPosition(pos, MoveEnum.RIGHT);
+        pos = Orientation.nextPosition(pos, MoveEnum.RIGHT);
 
-        assertTrue(pos == Position.NORTH);
+        assertTrue(pos == PositionEnum.NORTH);
     }
 
     // Counter clockwise tests
     @Test
     void shouldBeMoveFromNorthToWest() {
-        assertTrue(Orientation.nextPosition(Position.NORTH, Move.LEFT) == Position.WEST);
+        assertTrue(Orientation.nextPosition(PositionEnum.NORTH, MoveEnum.LEFT) == PositionEnum.WEST);
     }
 
     @Test
     void shouldBeMoveFromWestToSouth() {
-        Position pos = Position.NORTH;
-        pos = Orientation.nextPosition(pos, Move.LEFT);
-        pos = Orientation.nextPosition(pos, Move.LEFT);
+        PositionEnum pos = PositionEnum.NORTH;
+        pos = Orientation.nextPosition(pos, MoveEnum.LEFT);
+        pos = Orientation.nextPosition(pos, MoveEnum.LEFT);
 
-        assertTrue(pos == Position.SOUTH);
+        assertTrue(pos == PositionEnum.SOUTH);
     }
 
     @Test
     void shouldBeMoveFromNorthToEast() {
-        Position pos = Position.NORTH;
-        pos = Orientation.nextPosition(pos, Move.LEFT);
-        pos = Orientation.nextPosition(pos, Move.LEFT);
-        pos = Orientation.nextPosition(pos, Move.LEFT);
+        PositionEnum pos = PositionEnum.NORTH;
+        pos = Orientation.nextPosition(pos, MoveEnum.LEFT);
+        pos = Orientation.nextPosition(pos, MoveEnum.LEFT);
+        pos = Orientation.nextPosition(pos, MoveEnum.LEFT);
 
-        assertTrue(pos == Position.EAST);
+        assertTrue(pos == PositionEnum.EAST);
     }
 
     @Test
     void shouldBeMoveFromNorthToNorth() {
-        Position pos = Position.NORTH;
-        pos = Orientation.nextPosition(pos, Move.LEFT);
-        pos = Orientation.nextPosition(pos, Move.LEFT);
-        pos = Orientation.nextPosition(pos, Move.LEFT);
-        pos = Orientation.nextPosition(pos, Move.LEFT);
+        PositionEnum pos = PositionEnum.NORTH;
+        pos = Orientation.nextPosition(pos, MoveEnum.LEFT);
+        pos = Orientation.nextPosition(pos, MoveEnum.LEFT);
+        pos = Orientation.nextPosition(pos, MoveEnum.LEFT);
+        pos = Orientation.nextPosition(pos, MoveEnum.LEFT);
 
-        assertTrue(pos == Position.NORTH);
+        assertTrue(pos == PositionEnum.NORTH);
     }
 
 }
