@@ -25,10 +25,10 @@ public final class Orientation {
         int index = positions.indexOf(current);
         int lastIndex = positions.size() - 1;
 
-        index = index == lastIndex ? 0 : index + 1;
         // If moves to right, increase index, if reach limit of positions, starts of
         // befinning
         if (turn == Move.RIGHT) {
+            index = index == lastIndex ? 0 : index + 1;
         } else {
             // If moves to left, decrease index, if reach init of positions, starts of
             // end
