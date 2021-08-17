@@ -23,24 +23,18 @@ public final class Orientation {
      */
     public static Position nextPosition(Position current, Move turn) {
         int index = positions.indexOf(current);
-        int size = positions.size();
+        int lastIndex = positions.size() - 1;
 
+        index = index == lastIndex ? 0 : index + 1;
+        // If moves to right, increase index, if reach limit of positions, starts of
+        // befinning
         if (turn == Move.RIGHT) {
-            if (index == size - 1) {
-                index = 0;
-            }
-
-            return positions.get(index);
+        } else {
+            // If moves to left, decrease index, if reach init of positions, starts of
+            // end
+            index = index == 0 ? lastIndex : index - 1;
         }
 
-        if (turn == Move.LEFT) {
-            if (index == 0) {
-                index = size - 1;
-            }
-
-            return positions.get(index);
-        }
-
-        return current;
+        return positions.get(index);
     }
 }
