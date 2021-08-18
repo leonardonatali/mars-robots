@@ -16,6 +16,13 @@ public class Robot {
     }
 
     /**
+     * @return the current robot position
+     */
+    public PositionEnum getPosition() {
+        return position;
+    }
+
+    /**
      * @return the x
      */
     public int getX() {
