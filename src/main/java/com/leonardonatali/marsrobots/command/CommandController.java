@@ -31,6 +31,8 @@ public class CommandController {
             return ResponseEntity.badRequest().body(this.badRequestMessage);
         }
 
+        this.robot = new Robot();
+
         String[] args = command.getCommand().split("");
 
         for (String arg : args) {
@@ -45,11 +47,11 @@ public class CommandController {
             int stepY = 0;
 
             if (robot.getPosition() == PositionEnum.NORTH || robot.getPosition() == PositionEnum.SOUTH) {
-                stepX = robot.getPosition() == PositionEnum.NORTH ? 1 : -1;
+                stepY = robot.getPosition() == PositionEnum.NORTH ? 1 : -1;
             }
 
             if (robot.getPosition() == PositionEnum.WEST || robot.getPosition() == PositionEnum.EAST) {
-                stepY = robot.getPosition() == PositionEnum.EAST ? 1 : -1;
+                stepX = robot.getPosition() == PositionEnum.EAST ? 1 : -1;
             }
 
             if (!this.terrain.isValidCoordinate(robot.getX() + stepX, robot.getY() + stepY)) {
