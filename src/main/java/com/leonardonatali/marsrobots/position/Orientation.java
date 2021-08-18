@@ -7,7 +7,7 @@ import com.leonardonatali.marsrobots.position.enums.MoveEnum;
 import com.leonardonatali.marsrobots.position.enums.PositionEnum;
 
 public final class Orientation {
-    private static final List<PositionEnum> positions = Arrays.asList(
+    public static final List<PositionEnum> positions = Arrays.asList(
             new PositionEnum[] { PositionEnum.NORTH, PositionEnum.EAST, PositionEnum.SOUTH, PositionEnum.WEST });
 
     private Orientation() {
