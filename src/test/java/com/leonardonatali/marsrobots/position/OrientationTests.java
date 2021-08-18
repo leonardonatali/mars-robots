@@ -1,8 +1,7 @@
-package com.leonardonatali.marsrobots.orientation;
+package com.leonardonatali.marsrobots.position;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.leonardonatali.marsrobots.position.Orientation;
 import com.leonardonatali.marsrobots.position.enums.MoveEnum;
 import com.leonardonatali.marsrobots.position.enums.PositionEnum;
 
