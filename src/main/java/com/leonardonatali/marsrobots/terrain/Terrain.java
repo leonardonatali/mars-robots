@@ -31,7 +31,7 @@ public class Terrain {
             return false;
         }
 
-        if (this.coordinates[0].length - 1 >= y) {
+        if (y >= this.coordinates[0].length - 1) {
             return false;
         }
 
